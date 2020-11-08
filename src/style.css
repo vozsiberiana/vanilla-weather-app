@@ -8,6 +8,7 @@ h1 {
   font-weight: 100;
   line-height: 48px;
   margin-bottom: 0;
+  text-align: center;
 }
 
 ul {
@@ -24,7 +25,23 @@ li {
   line-height: 19px;
 }
 
+small {
+  display: block;
+  margin: 10px auto;
+  text-align: center;
+}
+
 .weather-app {
   margin: 30px auto;
-  padding: 20px;
+  padding: 10px;
+}
+
+.time-date {
+  text-align: center;
+}
+
+.temperature {
+  font-size: 30px;
+  line-height: 1;
+  font-weight: bolder;
 }
