@@ -9,13 +9,14 @@
       integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
       crossorigin="anonymous"
     />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/style.css" />
     <title>Weather App</title>
   </head>
   <body>
     <div class="container">
       <div class="weather-app">
-        <h1>Barcelona</h1>
+        <h1 id="city"></h1>
         <div class="time-date">
           <span> Sunday 09:29 </span>
           <span> November, 08 </span>
@@ -29,11 +30,12 @@
           </div>
           <div class="col-6">
             <ul>
-              <li class="temperature" id="temperature">
-                <strong>15</strong> C | F
+              <li class="temperature">
+                <strong id="temperature"></strong> C | F
               </li>
-              <li>Humidity: 89 %</li>
-              <li>Wind: 4 km/h</li>
+              <li id="description"></li>
+              <li>Humidity: <span id="humidity"></span> %</li>
+              <li>Wind: <span id="wind"></span> km/h</li>
             </ul>
           </div>
         </div>
