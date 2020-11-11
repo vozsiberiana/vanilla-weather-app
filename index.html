@@ -17,6 +17,16 @@
     <div class="container">
       <div class="weather-app">
         <form id="search-form" class="mb-3">
+          <!--     <button>
+            <i class="fas fa-search search-icon" aria-hidden="true"></i>
+          </button>
+          <input
+            class="text-input"
+            type="text"
+            placeholder="Type a city.."
+            autocomplete="off"
+            autofocus
+          /> -->
           <div class="row">
             <div class="col-9">
               <input
@@ -53,7 +63,11 @@
           <div class="col-6">
             <ul>
               <li class="temperature">
-                <strong id="temperature"></strong> C | F
+                <strong id="temperature"></strong>
+                <span class="units"
+                  ><a href="#" id="celsius-link" class="active">°C</a> |
+                  <a href="#" id="fahrenheit-link">°F</a></span
+                >
               </li>
               <li id="description"></li>
               <li>Humidity: <span id="humidity"></span> %</li>

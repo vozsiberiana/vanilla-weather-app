@@ -46,3 +46,12 @@ small {
   line-height: 1;
   font-weight: bolder;
 }
+
+.units .active {
+  color: black;
+  cursor: default;
+}
+
+.units .active:hover {
+  text-decoration: none;
+}
