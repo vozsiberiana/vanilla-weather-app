@@ -69,8 +69,8 @@ small {
 .weather-forecast img {
   display: block;
   margin: 0 auto;
-  height: 48px;
-  width: 48px;
+  height: 96px;
+  width: 96px;
 }
 
 .weather-forecast-temperature {
