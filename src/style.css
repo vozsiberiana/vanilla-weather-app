@@ -1,5 +1,6 @@
 body {
   font-family: arial, sans-serif;
+  background-color: #e2faff38;
 }
 
 h1 {
@@ -28,8 +29,13 @@ li {
 
 small {
   display: block;
-  margin: 10px auto;
+  margin: 30px auto;
   text-align: center;
+}
+
+.description {
+  font-size: 20px;
+  font-weight: 400;
 }
 
 .weather-app {
