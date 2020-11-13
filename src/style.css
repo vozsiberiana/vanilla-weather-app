@@ -61,9 +61,9 @@ small {
   font-size: 14px;
   font-weight: 400;
   text-align: center;
-  height: 15px;
+  height: 14px;
   line-height: 15px;
-  padding-top: 7px;
+  padding-top: 30px;
 }
 
 .weather-forecast img {
@@ -79,6 +79,6 @@ small {
   font-size: 13px;
   font-weight: 400;
   height: auto;
-  line-height: 15px;
+  line-height: 13px;
   white-space: nowrap;
 }
