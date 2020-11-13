@@ -1,3 +1,4 @@
+//Returns the day and the real time
 function formatDate() {
   let date = new Date();
   let days = [
@@ -21,6 +22,7 @@ function formatDate() {
   return `${day}, ${hours}:${minutes}`;
 }
 
+//Displays actual weather data and real time in the page
 function displayTemperature(response) {
   console.log(response.data);
   let temperatureElement = document.querySelector("#temperature");
@@ -47,6 +49,8 @@ function displayTemperature(response) {
   pressureElement.innerHTML = Math.round(response.data.main.pressure);
 }
 
+//Returns the time based on OpenWeather last update
+//(for the forecast, each 3 hrs)
 function formatHours(timestamp) {
   let date = new Date(timestamp);
   let hours = date.getHours();
@@ -60,6 +64,7 @@ function formatHours(timestamp) {
   return `${hours}:${minutes}`;
 }
 
+//Displays the forecast
 function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
   forecastElement.innerHTML = null;
@@ -86,6 +91,7 @@ function displayForecast(response) {
   }
 }
 
+//Searches for the city
 function search(city) {
   let apiKey = "0b1fa8952349f479be72640e8d64dd95";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -95,12 +101,14 @@ function search(city) {
   axios.get(apiUrl).then(displayForecast);
 }
 
+//Handles the submit event (the search form)
 function handleSubmit(event) {
   event.preventDefault();
   let cityInputElement = document.querySelector("#city-input");
   search(cityInputElement.value);
 }
 
+//Converts Celsius to Fahrenheit
 function displayFahrenheitTemperature(event) {
   event.preventDefault();
   celsiusLink.classList.remove("active");
@@ -110,6 +118,7 @@ function displayFahrenheitTemperature(event) {
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 
+//Converts Fahrenheit to Celsius
 function displayCelsiusTemperature(event) {
   event.preventDefault();
   celsiusLink.classList.add("active");
