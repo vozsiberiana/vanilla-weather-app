@@ -3,11 +3,19 @@ body {
   background-color: #e2faff38;
 }
 
+.page-name,
+.units,
+.search-column {
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
 h1,
 small,
 .time-date,
 .units a,
-.description-block {
+.description-block,
+.page-name {
   color: #214851;
 }
 
@@ -60,6 +68,10 @@ small {
   font-weight: bolder;
 }
 
+.page-name {
+  font-size: 30px;
+}
+
 .units .active {
   color: white;
   background-color: #214851;
@@ -71,6 +83,16 @@ small {
 .units .active:hover {
   text-decoration: none;
   cursor: pointer;
+}
+
+@media (max-width: 675px) {
+  .main-image {
+    width: 200px;
+  }
+  .weather-images {
+    height: 60px;
+    width: 60px;
+  }
 }
 
 .weather-forecast h3 {
@@ -108,6 +130,7 @@ small {
 
 .input-group {
   margin: 0 auto;
+  max-width: 550px;
 }
 
 .form-control {
@@ -131,17 +154,20 @@ small {
   box-shadow: none;
 }
 
+.description-container {
+  padding-left: 4rem;
+}
+
 /*new review the next three*/
 .f-conversion,
 .c-conversion {
   font-weight: 800;
   font-size: 1.75rem;
-  position: absolute;
   top: 25px;
   height: 40px;
   width: 40px;
   text-align: center;
-  letter-spacing: 10px;
+  letter-spacing: 12px;
   line-height: 40px;
 }
 

@@ -25,39 +25,37 @@
   <body>
     <div class="container">
       <div class="weather-app">
-        <!-- 
-        <div class="header">
-        <div class="page-name page-name-welcome-xs">
-        <strong>Musi</strong>Cast
-        </div> -->
+        <div class="header row">
+          <div class="page-name col-2"><strong>M</strong>Cast</div>
 
-        <form id="search-form" class="mb-3">
-          <div class="input-group col-md-4">
-            <input
-              class="form-control py-2 border-right-0 border"
-              placeholder="Type a city.."
-              type="search"
-              id="city-input"
-              autocomplete="off"
-              spellcheck="false"
-            />
-            <span class="input-group-append">
-              <button
-                class="btn border-left-0 border search-button"
-                type="button"
-              >
-                <i class="fas fa-search"></i>
-              </button>
-            </span>
+          <div class="col-7 search-column">
+            <form id="search-form" class="mb-3">
+              <div class="input-group col-md-4">
+                <input
+                  class="form-control py-2 border-right-0 border"
+                  placeholder="Type a city.."
+                  type="search"
+                  id="city-input"
+                  autocomplete="off"
+                  spellcheck="false"
+                />
+                <span class="input-group-append">
+                  <button
+                    class="btn border-left-0 border search-button"
+                    type="button"
+                  >
+                    <i class="fas fa-search"></i>
+                  </button>
+                </span>
+              </div>
+            </form>
           </div>
-        </form>
 
-        <div class="units">
-          <a href="#" id="celsius-link" class="c-conversion active">C</a>
-          <a href="#" id="fahrenheit-link" class="f-conversion">F</a>
+          <div class="units col-3 text-right">
+            <a href="#" id="celsius-link" class="c-conversion active">C</a>
+            <a href="#" id="fahrenheit-link" class="f-conversion">F</a>
+          </div>
         </div>
-
-        <!--  </div> -->
 
         <h1 id="city"></h1>
         <div class="time-date">
@@ -65,29 +63,35 @@
           <span> November, 08 </span>
         </div>
         <div class="row description-block">
-          <div class="col-5 text-right">
-            <img src="src/weather.svg" alt="The picture" width="300" />
+          <div class="col-6 text-right">
+            <img
+              src="src/weather.svg"
+              alt="The picture"
+              width="300"
+              class="main-image"
+            />
           </div>
-          <div class="col-7">
+          <div class="col-6">
             <ul>
               <li class="temperature">
                 <img src="#" id="icon" />
                 <strong id="temperature"></strong>
                 <span id="unit">°C</span>
-                <!-- <span class="units"
-                  ><a href="#" id="celsius-link" class="active">°C</a> |
-                  <a href="#" id="fahrenheit-link">°F</a></span
-                > -->
               </li>
-              <li class="description" id="description"></li>
-              <br />
-              <li>Humidity: <span id="humidity"></span> %</li>
-              <li>Pressure: <span id="pressure"></span></li>
-              <li>Wind: <span id="wind"></span> km/h</li>
+              <div class="description-container">
+                <li class="description" id="description"></li>
+                <br />
+
+                <li>Humidity: <span id="humidity"></span> %</li>
+                <li>Pressure: <span id="pressure"></span></li>
+                <li>Wind: <span id="wind"></span> km/h</li>
+              </div>
             </ul>
           </div>
         </div>
-        <div class="row weather-forecast" id="forecast"></div>
+        <div class="row weather-forecast" id="forecast">
+          <div class="row"></div>
+        </div>
         <small>
           <a
             href="https://github.com/vozsiberiana/vanilla-weather-app"
