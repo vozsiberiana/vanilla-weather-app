@@ -6,6 +6,7 @@ body {
 h1,
 small,
 .time-date,
+.units a,
 .description-block {
   color: #214851;
 }
@@ -60,12 +61,16 @@ small {
 }
 
 .units .active {
-  color: black;
+  color: white;
+  background-color: #214851;
+  border-radius: 50%;
   cursor: default;
 }
 
+.units a,
 .units .active:hover {
   text-decoration: none;
+  cursor: pointer;
 }
 
 .weather-forecast h3 {
@@ -118,10 +123,34 @@ small {
 }
 
 .btn:hover {
-  background-color: rgb(62, 134, 216);
+  background-color: #b2f0fe;
   color: white;
 }
 
 .form-control:focus {
   box-shadow: none;
+}
+
+/*new review the next three*/
+.f-conversion,
+.c-conversion {
+  font-weight: 800;
+  font-size: 1.75rem;
+  position: absolute;
+  top: 25px;
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  letter-spacing: 10px;
+  line-height: 40px;
+}
+
+.f-conversion {
+  padding-left: 11px;
+  right: 25px;
+}
+
+.c-conversion {
+  padding-left: 9px;
+  right: 80px;
 }
