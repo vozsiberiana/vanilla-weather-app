@@ -1,10 +1,16 @@
 body {
-  font-family: arial, sans-serif;
+  font-family: "Righteous", cursive;
   background-color: #e2faff38;
 }
 
+h1,
+small,
+.time-date,
+.description-block {
+  color: #214851;
+}
+
 h1 {
-  color: indigo;
   font-size: 44px;
   font-weight: 100;
   line-height: 48px;
