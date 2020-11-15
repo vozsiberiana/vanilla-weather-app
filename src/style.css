@@ -88,3 +88,34 @@ small {
   line-height: 13px;
   white-space: nowrap;
 }
+
+.search-button {
+  box-shadow: none;
+  color: gray;
+  background-color: white;
+}
+
+.input-group {
+  margin: 0 auto;
+}
+
+.form-control {
+  border-radius: 2.25rem;
+}
+
+.btn {
+  border-radius: 2.25rem;
+}
+
+.btn:focus {
+  box-shadow: none;
+}
+
+.btn:hover {
+  background-color: rgb(62, 134, 216);
+  color: white;
+}
+
+.form-control:focus {
+  box-shadow: none;
+}

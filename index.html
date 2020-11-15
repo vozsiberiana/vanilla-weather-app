@@ -9,6 +9,10 @@
       integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
       crossorigin="anonymous"
     />
+    <script
+      src="https://kit.fontawesome.com/15d9645574.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/style.css" />
     <title>Weather App</title>
@@ -16,36 +20,33 @@
   <body>
     <div class="container">
       <div class="weather-app">
+        <!-- 
+        <div class="header">
+        <div class="page-name page-name-welcome-xs">
+        <strong>Musi</strong>Cast
+        </div> -->
+
         <form id="search-form" class="mb-3">
-          <!--     <button>
-            <i class="fas fa-search search-icon" aria-hidden="true"></i>
-          </button>
-          <input
-            class="text-input"
-            type="text"
-            placeholder="Type a city.."
-            autocomplete="off"
-            autofocus
-          /> -->
-          <div class="row">
-            <div class="col-9">
-              <input
-                type="search"
-                placeholder="Type a city.."
-                class="form-control"
-                id="city-input"
-                autocomplete="off"
-              />
-            </div>
-            <div class="col-3">
-              <input
-                type="submit"
-                value="Search"
-                class="btn btn-primary w-100"
-              />
-            </div>
+          <div class="input-group col-md-4">
+            <input
+              class="form-control py-2 border-right-0 border"
+              placeholder="Type a city.."
+              type="search"
+              id="city-input"
+              autocomplete="off"
+              spellcheck="false"
+            />
+            <span class="input-group-append">
+              <button
+                class="btn border-left-0 border search-button"
+                type="button"
+              >
+                <i class="fas fa-search"></i>
+              </button>
+            </span>
           </div>
         </form>
+        <!--  </div> -->
 
         <h1 id="city"></h1>
         <div class="time-date">
