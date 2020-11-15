@@ -93,14 +93,19 @@ function displayForecast(response) {
   }
 }
 
+//Handles the error
+function handleError() {
+  alert("Oops, something is wrong. Try again!");
+}
+
 //Searches for the city
 function search(city) {
   let apiKey = "0b1fa8952349f479be72640e8d64dd95";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayTemperature);
 
-  apiUrl = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(displayForecast);
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast).catch(handleError);
 }
 
 //Handles the submit event (the search form)

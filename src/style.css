@@ -208,3 +208,9 @@ small {
     border-radius: 50%;
   }
 }
+
+.interactive-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 400px);
+  grid-template-rows: repeat(2, 200px);
+}
