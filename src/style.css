@@ -3,13 +3,6 @@ body {
   background-color: #e2faff38;
 }
 
-.page-name,
-.units,
-.search-column {
-  margin-top: 40px;
-  margin-bottom: 20px;
-}
-
 h1,
 small,
 .time-date,
@@ -85,14 +78,11 @@ small {
   cursor: pointer;
 }
 
-@media (max-width: 675px) {
-  .main-image {
-    width: 200px;
-  }
-  .weather-images {
-    height: 60px;
-    width: 60px;
-  }
+.page-name,
+.units,
+.search-column {
+  margin-top: 40px;
+  margin-bottom: 20px;
 }
 
 .weather-forecast h3 {
@@ -179,4 +169,42 @@ small {
 .c-conversion {
   padding-left: 9px;
   right: 80px;
+}
+
+@media (max-width: 675px) {
+  .main-image {
+    width: 200px;
+  }
+  .weather-images {
+    height: 60px;
+    width: 60px;
+  }
+  .page-name {
+    font-size: 15px;
+  }
+  .f-conversion,
+  .c-conversion {
+    font-weight: 400;
+    font-size: 1rem;
+    top: 10px;
+    height: 20px;
+    width: 15px;
+    text-align: center;
+    letter-spacing: 3px;
+    line-height: 20px;
+  }
+
+  .f-conversion {
+    padding-left: 3px;
+    right: 10px;
+  }
+
+  .c-conversion {
+    padding-left: 3px;
+    right: 10px;
+  }
+
+  .units {
+    border-radius: 50%;
+  }
 }

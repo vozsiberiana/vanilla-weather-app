@@ -24,7 +24,6 @@ function formatDate() {
 
 //Displays actual weather data and real time in the page
 function displayTemperature(response) {
-  console.log(response.data);
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
   let descriptionElement = document.querySelector("#description");
@@ -66,6 +65,7 @@ function formatHours(timestamp) {
 
 //Displays the forecast
 function displayForecast(response) {
+  console.log(response);
   let forecastElement = document.querySelector("#forecast");
   forecastElement.innerHTML = null;
   let forecast = null;
@@ -73,19 +73,21 @@ function displayForecast(response) {
   for (let i = 0; i < 6; i++) {
     forecast = response.data.list[i];
     forecastElement.innerHTML += `          
-        <div class="col-2">
+    <div class="col-2">
             <h3>
             ${formatHours(forecast.dt * 1000)}
             </h3>
             <img
               src="http://openweathermap.org/img/wn/${
                 forecast.weather[0].icon
-              }@2x.png"
+              }@2x.png" class="weather-images"
             />
             <div class="weather-forecast-temperature">
-              <strong>${Math.round(
+              <strong><span class="max">${Math.round(
                 forecast.main.temp_max
-              )}°</strong> | ${Math.round(forecast.main.temp_min)}°
+              )}</span>°</strong> | <span class="min">${Math.round(
+      forecast.main.temp_min
+    )}</span>°
             </div>
         </div>`;
   }
@@ -106,6 +108,10 @@ function handleSubmit(event) {
   event.preventDefault();
   let cityInputElement = document.querySelector("#city-input");
   search(cityInputElement.value);
+  if (fahrenheitLink.classList.contains("active")) {
+    celsiusLink.classList.add("active");
+    fahrenheitLink.classList.remove("active");
+  }
 }
 
 //Converts Celsius to Fahrenheit
@@ -118,6 +124,22 @@ function displayFahrenheitTemperature(event) {
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
   let unit = document.querySelector("#unit");
   unit.innerHTML = "°F";
+
+  let unitForecastMax = document.querySelectorAll(".max");
+  let unitForecastMin = document.querySelectorAll(".min");
+
+  for (let i = 0; i < 6; i++) {
+    celsiusTemperatureMaxArray[i] = unitForecastMax[i].innerHTML;
+    celsiusTemperatureMinArray[i] = unitForecastMin[i].innerHTML;
+    // console.log(celsiusTemperatureMaxArray[i], celsiusTemperatureMinArray[i]);
+
+    unitForecastMax[i].innerHTML = Math.round(
+      (parseInt(unitForecastMax[i].innerHTML) * 9) / 5 + 32
+    );
+    unitForecastMin[i].innerHTML = Math.round(
+      (parseInt(unitForecastMin[i].innerHTML) * 9) / 5 + 32
+    );
+  }
 }
 
 //Converts Fahrenheit to Celsius
@@ -129,9 +151,18 @@ function displayCelsiusTemperature(event) {
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
   let unit = document.querySelector("#unit");
   unit.innerHTML = "°C";
+
+  let unitForecastMax = document.querySelectorAll(".max");
+  let unitForecastMin = document.querySelectorAll(".min");
+  for (let i = 0; i < 6; i++) {
+    unitForecastMax[i].innerHTML = celsiusTemperatureMaxArray[i];
+    unitForecastMin[i].innerHTML = celsiusTemperatureMinArray[i];
+  }
 }
 
 let celsiusTemperature = null;
+let celsiusTemperatureMaxArray = new Array(6).fill(0);
+let celsiusTemperatureMinArray = new Array(6).fill(0);
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
